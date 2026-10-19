@@ -1,6 +1,6 @@
 /* Service worker : permet d'ouvrir l'app sans réseau.
    La page est d'abord cherchée en ligne (pour recevoir les mises à jour), sinon en cache. */
-const CACHE = 'cdb-2.0.1';
+const CACHE = 'cdb-3.0.0';
 const SHELL = ['./', './index.html', './manifest.webmanifest', './icon-192.png', './icon-512.png', './apple-touch-icon.png'];
 self.addEventListener('install', e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting())); });
 self.addEventListener('activate', e => {
